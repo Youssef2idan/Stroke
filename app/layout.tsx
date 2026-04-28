@@ -28,10 +28,11 @@ export const metadata: Metadata = {
   manifest: "/assets/site.webmanifest",
   icons: {
     icon: [
-      { url: "/assets/favicon/favicon-16x16.svg", sizes: "16x16", type: "image/svg+xml" },
-      { url: "/assets/favicon/favicon-32x32.svg", sizes: "32x32", type: "image/svg+xml" }
+      { url: "/assets/favicon/favicon.ico", sizes: "any" },
+      { url: "/assets/favicon/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+      { url: "/assets/favicon/favicon-16x16.png", sizes: "16x16", type: "image/png" }
     ],
-    apple: [{ url: "/assets/favicon/apple-touch-icon.svg", sizes: "180x180", type: "image/svg+xml" }]
+    apple: [{ url: "/assets/favicon/apple-touch-icon.png", sizes: "180x180", type: "image/png" }]
   },
   openGraph: {
     title: `${company.name} | Luxury Digital Agency Platform`,
