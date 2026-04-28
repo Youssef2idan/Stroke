@@ -6,7 +6,7 @@ import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { company, navigation } from "@/data/site";
-import logo from "@/assets/favicon/favicon-32x32.png";
+import logo from "@/assets/favicon/logo.jpg";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 

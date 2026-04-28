@@ -7,6 +7,9 @@ export type ServicePlan = {
   features: string[];
   deliverables: string[];
   ctaLabel: string;
+  badge?: string;
+  guestCount?: number;
+  customizationBudget?: string;
 };
 
 export type ServiceCategory = {
@@ -48,40 +51,98 @@ export const services: ServiceItem[] = [
         slug: "graduation",
         title: "Graduation Parties",
         description:
-          "Stylish celebration packages for milestone moments with polished branding, staging, and guest flow.",
-        audience: "Families, schools, and premium private hosts",
-        leadMetric: "Fast-turn event styling",
+          "Premium celebration systems for graduation milestones, featuring tailored packages with exclusive entertainment, professional coverage, and customizable experiences.",
+        audience: "Families, schools, institutions, and celebration hosts",
+        leadMetric: "End-to-end graduation experience management",
         customOptionEnabled: true,
         plans: [
           {
             slug: "basic",
-            title: "Basic Plan",
+            title: "Basic Graduation Plan",
             price: "$1,200",
-            summary: "An elegant entry package for intimate celebrations.",
+            summary: "A simple and cost-effective solution for small graduation gatherings while maintaining a professional and organized experience.",
             turnaround: "7 days",
             ctaLabel: "Select Basic Plan",
-            features: ["Theme consultation", "Guest layout planning", "Decor essentials", "Event-day coordination"],
-            deliverables: ["Planning call", "Venue flow map", "Styling checklist", "On-site support window"]
+            badge: undefined,
+            guestCount: 100,
+            customizationBudget: "3000 EGP",
+            features: [
+              "🎉 Venue for up to 100 guests",
+              "🍽️ Light catering (snacks & soft drinks)",
+              "🏅 Graduation sashes for 100 students",
+              "🎧 Standard DJ & sound system",
+              "📸 Basic photography coverage",
+              "🎁 Customization budget worth 3000 EGP"
+            ],
+            deliverables: [
+              "Venue coordination",
+              "Catering management",
+              "Sash distribution setup",
+              "Audio-visual support",
+              "Photography coverage (4 hours)",
+              "Customization consultation"
+            ]
           },
           {
             slug: "standard",
-            title: "Standard Plan",
+            title: "Standard Graduation Plan",
             price: "$2,700",
-            summary: "A fuller celebration system with styling and media coverage.",
+            summary: "Ideal for medium-sized graduation events with a premium experience, combining organization, entertainment, and full media coverage.",
             turnaround: "10 days",
             ctaLabel: "Select Standard Plan",
-            features: ["Custom event identity", "Upgraded decor styling", "Photo coverage", "Guest experience coordination"],
-            deliverables: ["Moodboard deck", "Decor sourcing", "Photo coverage", "Run-of-show document"]
+            badge: "Most Popular",
+            guestCount: 200,
+            customizationBudget: "6000 EGP",
+            features: [
+              "🎉 Venue for up to 200 guests",
+              "🍽️ Full dinner service",
+              "🏅 Graduation shields & sashes for 200 students",
+              "🎧 Professional DJ & high-end sound system",
+              "🎥 Full event video coverage",
+              "📸 Professional photography coverage",
+              "🎁 Customization budget worth 6000 EGP"
+            ],
+            deliverables: [
+              "Premium venue coordination",
+              "Full meal service setup",
+              "Ceremonial insignia distribution",
+              "Professional AV production",
+              "Full day video coverage (edited highlight reel)",
+              "Professional photo coverage (8 hours with edited album)",
+              "Customization consultation & implementation"
+            ]
           },
           {
             slug: "premium",
-            title: "Premium Plan",
+            title: "Premium Graduation Plan",
             price: "$4,900",
-            summary: "A luxury event build with full creative direction.",
+            summary: "A luxury all-inclusive graduation experience designed for large-scale events with top-tier production, entertainment, and unforgettable moments.",
             turnaround: "14 days",
             ctaLabel: "Select Premium Plan",
-            features: ["Creative concept board", "Premium staging", "Video highlight reel", "On-site production lead"],
-            deliverables: ["Creative direction", "Vendor management", "Highlight film", "Dedicated event lead"]
+            badge: undefined,
+            guestCount: 400,
+            customizationBudget: "12000 EGP",
+            features: [
+              "🎉 Venue for up to 400 guests (luxury hall)",
+              "🍽️ Premium open buffet (fully customizable menu)",
+              "🏅 High-quality graduation shields & premium sashes for 400 students",
+              "🎧 Elite DJ + advanced sound & lighting system",
+              "🎥 Cinematic full event video production",
+              "📸 Professional photography + edited album",
+              "🎇 Special entrance show (Opening performance)",
+              "🎁 Customization budget worth 12000 EGP"
+            ],
+            deliverables: [
+              "Luxury venue coordination & lighting design",
+              "Premium catering with custom menu",
+              "High-end ceremonial materials",
+              "Elite audio-visual production team",
+              "Cinematic video production (4K, professional editing, highlight reel & full edit)",
+              "Professional photography (full day coverage with premium album)",
+              "Opening performance production & coordination",
+              "Complete customization suite & consultation",
+              "Dedicated event manager"
+            ]
           }
         ]
       },
