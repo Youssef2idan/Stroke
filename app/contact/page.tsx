@@ -25,8 +25,9 @@ export default function ContactPage() {
             <AnimatedSection>
               <div className="space-y-5">
                 <ContactCard label="Email" value={company.email} />
-                <ContactCard label="Phone" value={company.phone} />
-                <ContactCard label="Location" value={company.location} />
+                <ContactCard label="Phone" value={company.phones.join(" / ")} />
+                <ContactCard label="Address" value={company.location} />
+                <ContactCard label="Owner" value={company.owner} />
               </div>
             </AnimatedSection>
 

@@ -45,9 +45,11 @@ export type Testimonial = {
 
 export const company = {
   name: "Stroke",
-  email: "hello@strokecompany.com",
-  phone: "+1 (415) 555-0142",
-  location: "San Francisco, CA",
+  owner: "Mohamed Zidan",
+  email: "Stroke.digi@gmail.com",
+  phone: "01094677006",
+  phones: ["01094677006", "01000713820"],
+  location: "El Sahafa Street, El Manshia,, Alexandria, Egypt, 21519",
   tagline:
     "A luxury digital agency platform unifying events, branding, web development, media, and marketing into one premium system.",
   description:

@@ -21,7 +21,7 @@ export default function HomePage() {
             <AnimatedSection>
               <p className="eyebrow">Luxury agency platform</p>
               <h1 className="mt-6 max-w-4xl text-balance text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
-                Premium systems for brands that need more than isolated creative services.
+                Stroke. Elevating Brands Through Creative Excellence
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-white/68 sm:text-xl">
                 {company.tagline}

@@ -1,10 +1,12 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { company, navigation } from "@/data/site";
+import logo from "@/assets/favicon/favicon-32x32.png";
 import { Button } from "@/components/ui/button";
 import { Container } from "@/components/ui/container";
 
@@ -17,12 +19,18 @@ export function Navbar() {
       <Container className="pt-4">
         <div className="flex items-center justify-between rounded-full border border-white/10 bg-black/55 px-4 py-3 backdrop-blur-xl sm:px-6">
           <Link href="/" className="flex items-center gap-3" onClick={() => setOpen(false)}>
-            <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-white/5 text-lg font-semibold text-white">
-              S
+            <span className="inline-flex h-10 w-10 items-center justify-center overflow-hidden rounded-full border border-white/10 bg-white/5">
+              <Image
+                src={logo}
+                alt={`${company.name} logo`}
+                width={40}
+                height={40}
+                className="h-full w-full rounded-full object-cover"
+              />
             </span>
             <div>
               <p className="text-sm font-semibold tracking-[0.3em] text-white">{company.name}</p>
-              <p className="text-xs text-white/45">Creative company</p>
+              <p className="text-xs text-white/45">Owner {company.owner}</p>
             </div>
           </Link>
 
