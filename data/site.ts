@@ -63,6 +63,7 @@ export const company = {
 export const navigation = [
   { label: "Home", href: "/" },
   { label: "Services", href: "/services" },
+  { label: "Gallery", href: "/gallery" },
   { label: "Portfolio", href: "/portfolio" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" }

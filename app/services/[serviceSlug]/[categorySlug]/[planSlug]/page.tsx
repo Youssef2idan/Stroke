@@ -102,7 +102,11 @@ export default function PlanDetailPage({ params }: PageProps) {
                   ))}
                 </ul>
                 <div className="mt-8 flex flex-col gap-4 sm:flex-row">
-                  <Button href="/contact">{plan.ctaLabel}</Button>
+                  <Button
+                    href={`/gallery?service=${service.slug}&category=${category.slug}&plan=${plan.slug}`}
+                  >
+                    Confirm Plan
+                  </Button>
                   <Button href={`/services/${service.slug}/${category.slug}`} variant="secondary">
                     Back to plans
                   </Button>
