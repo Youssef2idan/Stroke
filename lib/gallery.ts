@@ -82,6 +82,14 @@ async function readFolderMeta(directoryPath: string): Promise<FolderMeta | null>
   }
 }
 
+function normalizeFileName(fileName: string): string {
+  // Convert to lowercase, remove spaces and special characters
+  return fileName
+    .toLowerCase()
+    .replace(/[\s\(\)]+/g, "-")
+    .replace(/[^a-z0-9\-.]/g, "");
+}
+
 async function readImagesFromDirectory(
   directoryPath: string,
   urlBase: string,
@@ -92,20 +100,29 @@ async function readImagesFromDirectory(
   const entries = await fs.readdir(directoryPath, { withFileTypes: true });
   const folderMeta = await readFolderMeta(directoryPath);
 
+  // Get actual files in directory to validate paths
+  const validFiles = new Set(
+    entries
+      .filter((entry) => entry.isFile())
+      .filter((entry) => IMAGE_EXTENSIONS.has(path.extname(entry.name).toLowerCase()))
+      .map((entry) => entry.name)
+  );
+
   return entries
     .filter((entry) => entry.isFile())
     .filter((entry) => IMAGE_EXTENSIONS.has(path.extname(entry.name).toLowerCase()))
     .sort((a, b) => a.name.localeCompare(b.name, undefined, { numeric: true, sensitivity: "base" }))
     .map((entry) => {
       const imageMeta = folderMeta?.images?.[entry.name];
+      const normalizedName = normalizeFileName(entry.name);
       const baseSrc =
         subcategorySlug === "general"
-          ? `${urlBase}/${sourceCategoryFolder}/${entry.name}`
-          : `${urlBase}/${sourceCategoryFolder}/${subcategorySlug}/${entry.name}`;
+          ? `${urlBase}/${sourceCategoryFolder}/${normalizedName}`
+          : `${urlBase}/${sourceCategoryFolder}/${subcategorySlug}/${normalizedName}`;
       return {
-        id: `${categorySlug}/${subcategorySlug}/${entry.name}`,
+        id: `${categorySlug}/${subcategorySlug}/${normalizedName}`,
         src: baseSrc,
-        name: entry.name,
+        name: normalizedName,
         title: imageMeta?.title ?? toLabel(removeExtension(entry.name)),
         description: imageMeta?.description,
         tags: imageMeta?.tags ?? []
